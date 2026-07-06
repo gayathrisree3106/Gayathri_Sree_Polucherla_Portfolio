@@ -155,7 +155,7 @@ height:100%;
 background:#38bdf8;
 animation:load 2s ease;
 }
-@keyframe load{
+@keyframes load{
 from{
 width:0;
 }

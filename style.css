@@ -153,6 +153,12 @@ margin-bottom:10px;
 display:block;
 height:100%;
 background:#38bdf8;
+animation:load 2s ease;
+}
+@keyframe load{
+from{
+width:0;
+}
 }
 
 /* TOGGLE */

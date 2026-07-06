@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gayathri Sree Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Particle JS -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- PARTICLES BACKGROUND -->
+<div id="particles-js"></div>
+
+<!-- DARK MODE TOGGLE -->
+<div class="toggle">
+<i class="fa-solid fa-moon" id="themeBtn"></i>
+</div>
+
+<header>
+<nav>
+<h2>Gayathri</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#internship">Internship</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="content">
+
+<h3>Hello, I'm</h3>
+<h1>POLUCHERLA GAYATHRI SREE</h1>
+
+<h2>
+<span id="typing"></span>
+</h2>
+
+<p>Computer Science Engineering Student (AI & ML) passionate about development & AI.</p><br>
+
+<div class="buttons">
+<a href="#contact" class="btn">Hire Me</a>
+<a href="https://www.linkedin.com" class="btn2">LinkedIn</a>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="title">About Me</h2>
+<div class="card">
+<p>
+Motivated CSE student specializing in AI & ML. Passionate about coding, web development, and problem solving.
+</p>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<h2 class="title">Education</h2>
+
+<div class="grid">
+
+<div class="box">
+<h3>B.Tech CSE (AI & ML)</h3>
+<p>Sri Venkateshwara College</p>
+<p>CGPA: 7.5</p>
+</div>
+
+<div class="box">
+<h3>Intermediate</h3>
+<p>Sri Chaitanya Junior College</p>
+<p>94.1%</p>
+</div>
+
+<div class="box">
+<h3>SSC</h3>
+<p>GMR School</p>
+<p>100%</p>
+</div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2 class="title">Skills</h2>
+
+<div class="skill">
+<p>Python</p><div class="bar"><span style="width:85%"></span></div>
+<p>HTML</p><div class="bar"><span style="width:95%"></span></div>
+<p>CSS</p><div class="bar"><span style="width:90%"></span></div>
+<p>JavaScript</p><div class="bar"><span style="width:75%"></span></div>
+<p>SQL</p><div class="bar"><span style="width:80%"></span></div>
+</div>
+
+</section>
+
+<!-- INTERNSHIP -->
+<section id="internship">
+<h2 class="title">Internship</h2>
+
+<div class="card">
+<h3>Python Developer Intern</h3>
+<h4>Infosys Springboard</h4>
+<p>Feb 2026 – Apr 2026</p>
+
+<ul>
+<li>Python programming & scripting</li>
+<li>Problem solving tasks</li>
+<li>Data structures basics</li>
+<li>Clean coding practices</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+<h2 class="title">Achievements</h2>
+
+<div class="grid">
+
+<div class="box">
+<i class="fa fa-medal"></i>
+<h3>Silver Medal</h3>
+<p>State Taekwondo Championship</p>
+</div>
+
+<div class="box">
+<i class="fa fa-code"></i>
+<h3>Python Certification</h3>
+<p>SWAYAM Course</p>
+</div>
+
+<div class="box">
+<i class="fa fa-robot"></i>
+<h3>AI Course</h3>
+<p>HPL Certification</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="title">Contact</h2>
+
+<div class="card">
+<p><i class="fa fa-phone"></i> 9346439472</p>
+<p><i class="fa fa-envelope"></i> gayathrisreepolucherla@gmail.com</p>
+<p><i class="fa fa-location"></i> Kadapa, India</p>
+</div>
+
+</section>
+
+<footer>
+<p>© 2025 Gayathri Sree Portfolio</p>
+</footer>
+
+<!-- TYPING + PARTICLES + DARK MODE SCRIPT -->
+<script>
+// Typing Effect
+const words = ["Python Developer ", "AI & ML Student ", "Web Developer "];
+let i=0, j=0, current="", isDeleting=false;
+
+function type(){
+current = words[i];
+
+document.getElementById("typing").textContent =
+isDeleting ? current.substring(0,j--) : current.substring(0,j++);
+
+if(!isDeleting && j===current.length){
+isDeleting=true;
+setTimeout(type,1000); return;
+}
+if(isDeleting && j===0){
+isDeleting=false;
+i=(i+1)%words.length;
+}
+setTimeout(type,isDeleting?60:120);
+}
+type();
+
+// Particle JS
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 60 },
+    "color": { "value": "#38bdf8" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3 },
+    "move": { "speed": 2 }
+  }
+});
+
+// Dark Mode Toggle
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.onclick = () => {
+document.body.classList.toggle("light");
+
+themeBtn.classList.toggle("fa-sun");
+themeBtn.classList.toggle("fa-moon");
+};
+</script>
+
+</body>
+</html>
